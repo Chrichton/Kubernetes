@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh7980\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"\
+\
+brew update && brew install kubectl && brew cask install docker minikube virtualbox\
+\
+brew install minikube\
+\
+brew cask install virtualbox\
+\
+Sicherheit/Allgemein: Virtualbox erlauben\
+\
+brew install docker\
+\
+minikube start\
+\
+\
+\
+\
+// minikube docker-env\
+eval $(minikube docker-env)\
+\
+Optional:\
+docker image pull richardchesterwood/k8s-fleetman-webapp-angular:release0-5\
+\
+docker container run -p 8080:80 -d richardchesterwood/k8s-fleetman-webapp-angular:release0-5\
+Output: dd64b8473115b9dd95a6aa99355c844a20a9edd8fde00236b94ec59696130377\
+\
+docker container ls\
+minikube ip\
+http://192.168.99.100:8080\
+\
+docker container stop dd64\
+docker container rm dd64\
+\
+Pods:\
+minikube status\
+kubectl get all\
+kubectl apply -f first-pod.yaml\
+kubectl describe pod webapp\
+kubectl exec webapp ls\
+kubectl -it exec webapp sh\
+\
+Services:\
+\
+\
+}
