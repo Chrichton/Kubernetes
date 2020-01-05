@@ -1,0 +1,47 @@
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew update && brew install kubectl && brew cask install docker minikube virtualbox
+
+brew install minikube
+
+brew cask install virtualbox
+
+Sicherheit/Allgemein: Virtualbox erlauben
+
+brew install docker
+
+minikube start
+
+
+
+
+// minikube docker-env
+eval $(minikube docker-env)
+
+Optional:
+docker image pull richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+
+docker container run -p 8080:80 -d richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+Output: dd64b8473115b9dd95a6aa99355c844a20a9edd8fde00236b94ec59696130377
+
+docker container ls
+minikube ip
+http://192.168.99.100:8080
+
+docker container stop dd64
+docker container rm dd64
+
+Pods: (short living, will often be restartet)
+minikube status
+kubectl get all
+kubectl apply -f first-pod.yaml
+kubectl describe pod webapp
+kubectl exec webapp ls
+kubectl -it exec webapp sh
+
+Services: ()
+type: ClusterIP = private Service insid  e Kubernetis
+      NotePort = exposed through the node > 30000
+
+kubectl apply -f webapp-service.yaml
+
