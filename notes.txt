@@ -45,3 +45,17 @@ type: ClusterIP = private Service insid  e Kubernetis
 
 kubectl apply -f webapp-service.yaml
 
+Deploy with zero downtime: 
+    add additional pod with new label (do it in same pod-file with --- as separator)
+    select this new pod via label in the service
+
+kubectl describe service fleetman-webapp
+kubectl describe svc fleetman-webapp
+
+kubectl get pods
+kubectl get po
+
+kubectl get po --show-labels
+
+kubectl get po --show-labels -l release=0 // filter
+
