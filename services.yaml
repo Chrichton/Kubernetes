@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     app: webapp
-    release: "0-5"
 
   ports:
     - name: http
@@ -25,7 +24,6 @@ metadata:
 spec:
   selector:
     app: activemq
-    release: "1"
 
   ports:
     - name: http

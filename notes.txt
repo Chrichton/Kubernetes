@@ -59,3 +59,11 @@ kubectl get po --show-labels
 
 kubectl get po --show-labels -l release=0 // filter
 
+kubectl apply -f .
+
+ReplicaSets:
+kubectl delete po webapp-release-0-5
+kubectl delete po --all  
+
+kubectl describe replicaset webapp
+kubectl describe rs webapp
