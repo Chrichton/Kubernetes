@@ -31,6 +31,8 @@ http://192.168.99.100:8080
 docker container stop dd64
 docker container rm dd64
 
+___________________________________________________________________________
+
 Pods: (short living, will often be restartet)
 minikube status
 kubectl get all
@@ -38,6 +40,8 @@ kubectl apply -f first-pod.yaml
 kubectl describe pod webapp
 kubectl exec webapp ls
 kubectl -it exec webapp sh
+
+___________________________________________________________________________
 
 Services: ()
 type: ClusterIP = private Service insid  e Kubernetis
@@ -61,12 +65,15 @@ kubectl get po --show-labels -l release=0 // filter
 
 kubectl apply -f .
 
+___________________________________________________________________________
+
 ReplicaSets:
 kubectl delete po webapp-release-0-5
 kubectl delete po --all  
 
 kubectl describe replicaset webapp
 kubectl describe rs webapp
+___________________________________________________________________________
 
 Deployment:
 rolling updates with zero downtime and rollback, when problem
@@ -82,5 +89,36 @@ kubectl rollout history deploy webapp
 Careful! Ony for emergencies. When using rollbacks.  
 kubectl rollout undo deploy webapp
 kubectl rollout undo deploy webapp --to-revision=4
+___________________________________________________________________________
+
+Networking:
+
+Service-kube-dns
+
+Namespaces: (partitioning resources pods/services) at example front-end, back-end
+
+default-Namespace
+
+kubectl get namespaces 
+kubectl get ns 
+
+kubectl get po -n kube-system
+kubectl get all -n kube-system
+kubectl describe svc kube-dns -n kube-system
+
+pod with mysql-database:
+kubectl apply -f networking-tests.yaml
+
+shell into webapp-container:
+exec -it webapp-858957ccc9-66t2h sh
+nslookup database
+apk update
+apk add mysql-client
+mysql -h database -uroot -ppassword fleetman
+create table testtable (test varchar(255));
+show tables;
+
+
+
 
 
