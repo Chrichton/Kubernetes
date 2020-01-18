@@ -67,3 +67,20 @@ kubectl delete po --all
 
 kubectl describe replicaset webapp
 kubectl describe rs webapp
+
+Deployment:
+rolling updates with zero downtime and rollback, when problem
+
+kubectl delete rs webapp
+
+minReadySeconds
+
+kubectl rollout status deployment webapp
+kubectl rollout status deploy webapp
+kubectl rollout history deploy webapp
+
+Careful! Ony for emergencies. When using rollbacks.  
+kubectl rollout undo deploy webapp
+kubectl rollout undo deploy webapp --to-revision=4
+
+
