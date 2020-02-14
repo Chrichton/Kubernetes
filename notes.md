@@ -123,6 +123,8 @@ Es wird automatisch im default namespace gesucht
 __nslookup database__ sucht auch in __database.default.svc.cluster.local__
 Wenn man in einem speziellen namespace suchen möchte, muss man den __FQDN__ angeben
 
+## Increase VirtualBox memeory to 4 GB !!
+
 ## Microservice Architecture
 
 ### lösche gesamtes altes Deployment
@@ -132,3 +134,4 @@ kubectl delete -f .
 kubectl logs <podname>
 ### follow logs
 kubectl logs -f <podname>
+
