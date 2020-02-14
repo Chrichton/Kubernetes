@@ -135,3 +135,16 @@ kubectl logs <podname>
 ### follow logs
 kubectl logs -f <podname>
 
+## MongoDB
+Per default, die Daten für MongoDB werden im Container gespeichert.
+Wenn der Pod stirbt, sind die Daten verloren.
+
+# Persitent Volume:
+Für unser Beispiel speichern im lokalen Dateisystem (in der VirtualBox VM).
+__volumeMounts__ im yaml
+
+später -> __ebs-Volume__ = __awsElasticBlockStore__ auf AWS
+
+Mit Doppelkick auf VirtualBox-Minicube kann man sich in die VM einloggen.
+User: docker
+Password: tcuser
