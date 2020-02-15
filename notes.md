@@ -151,4 +151,11 @@ Password: tcuser
 
 ### PersitentVolumeClaims
 hilft dabei, nicht überall hostPath durch ebsPath ersetzen zu müssen, wenn man von einem Cloud-Provider zu einem anderen wechseln möchte.
+At runtime the claim will be satified -> __binding__
+
+# list of all persistent volumes:
+kubectl get pv
+
+# list of persistent volume claims:
+kubectl get pvc
 
