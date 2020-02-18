@@ -159,3 +159,13 @@ kubectl get pv
 # list of persistent volume claims:
 kubectl get pvc
 
+# AWS
+Ein __Node__ ist ein physikalischer Server = __IC2-Instance__
+Ein System = __cluster__ besteht aus mehreren __nodes__
+Viele __kleine__ nodes
+
+Es gibt einen __Master Node__ der für die Verwaltung der __nodes__ zuständig ist.
+
+## kops
+__Kubernetis Operations__
+ 
