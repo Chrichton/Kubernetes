@@ -413,7 +413,8 @@ Course has been updated. I try to get the update
 
 ## Requests
 
-Limits for the Scheduler
+Limits for the Scheduler (essential)
+Scheduler will not create pod, when the requests can´t be satisfied
 
 __memory request__
 __cpu request__
@@ -426,6 +427,24 @@ containers:
 
 kubectl get all --all-namespaces
 kubectl describe node minikube
+
+## Limits
+
+Runtime Limits (safety net, optional)
+If the __memory limits__ are exceeded, the container will be killed.
+The pod will remain. The container will be restartet 
+
+If the __cpu limits__ are exceeded, the cpu will be "clamped".
+The container will continue to run
+
+yaml
+containers:
+ resources:
+    limits:
+        memory: 500Mi
+        cpu: 200m
+
+__OOMKilled__ = OutOfMemoryKilled
 
 
 

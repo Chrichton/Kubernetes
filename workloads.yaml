@@ -20,6 +20,9 @@ spec:
           requests:
               memory: 300Mi # 1Mi = 1024Ki  1Ki = 1024bytes
               cpu: 100m     # 1m = 0.001 cpu
+          limits:
+              memory: 500Mi
+              cpu: 200m
 ---
 apiVersion: apps/v1
 kind: Deployment
