@@ -410,3 +410,22 @@ you can create a __highly available cluster__
 __t2__ cheap, baseline level low with ability to burst above it. __credit balance__
 
 Course has been updated. I try to get the update
+
+## Requests
+
+Limits for the Scheduler
+
+__memory request__
+__cpu request__
+
+yaml
+containers:
+ resources:
+    requests:
+        memory:
+
+kubectl get all --all-namespaces
+kubectl describe node minikube
+
+
+

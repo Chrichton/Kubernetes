@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: queue
-  replicas: 1
+  replicas: 2
   template: # template for the pods
     metadata:
       labels:
@@ -16,6 +16,10 @@ spec:
       containers:
       - name: queue
         image: richardchesterwood/k8s-fleetman-queue:release2
+        resources:
+          requests:
+              memory: 300Mi # 1Mi = 1024Ki  1Ki = 1024bytes
+              cpu: 100m     # 1m = 0.001 cpu
 ---
 apiVersion: apps/v1
 kind: Deployment
