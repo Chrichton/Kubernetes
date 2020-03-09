@@ -459,3 +459,11 @@ kubectl top pod
 kubectl top node
 
 kubectl get all -n kube-system
+
+## Horizontal Pod Autoscaling
+
+### Improving the capacity of a service by creating more instances
+
+## Vertical Scaling
+
+### Improving the capacity of a service by making instance more powerfull
