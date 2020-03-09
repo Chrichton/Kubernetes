@@ -446,5 +446,16 @@ containers:
 
 __OOMKilled__ = OutOfMemoryKilled
 
+## addons
 
+minikube addons list
+minikube addons enable  metrics-server
 
+## Metrics (metric server)
+
+### needs at leat a minute to gather data
+
+kubectl top pod
+kubectl top node
+
+kubectl get all -n kube-system
