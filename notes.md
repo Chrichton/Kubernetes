@@ -467,3 +467,15 @@ kubectl get all -n kube-system
 ## Vertical Scaling
 
 ### Improving the capacity of a service by making instance more powerfull
+
+__HPA__ = horizontal autoscaler
+
+### scale api-gateway when cpu usage is 4 * resources:requests:cpu = 200m
+### min: 1 replica-set max: 4 replica-sets (beware of DOS-Attack)
+kubectl autoscale deployment api-gateway --cpu-percent 400 --min 1 --max 4
+
+kubectl get hpa
+kubectl describe hpa
+
+kubectl get hpa api-gateway -o yaml
+
