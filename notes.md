@@ -477,5 +477,10 @@ kubectl autoscale deployment api-gateway --cpu-percent 400 --min 1 --max 4
 kubectl get hpa
 kubectl describe hpa
 
+### show corresponding yaml
 kubectl get hpa api-gateway -o yaml
 
+kubectl describe hpa api-gateway
+
+### force terminating pod
+kubectl delete pods <podname>  --grace-period=0 --force
