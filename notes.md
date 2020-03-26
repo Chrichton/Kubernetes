@@ -486,10 +486,16 @@ kubectl delete pods <podname>  --grace-period=0 --force
 
 ## Readines and Liveness Probes
 
-A pod that just has started and therefore has the status __running__ might still not be ready for service (at example Springboot takes about 30-60 seconds to start inside it´s container and be ready to receive requests)
+A pod that just has started and therefore has the status __running__ might still not be ready for service (at example Springboot takes about 30-60 seconds to start inside it´s container and be ready to receive requests).
+Every pod should have one especially when you do autoscaling.
 
 readinessProbe:
           httpGet:
             path: /
             port: 8080
-            
+
+__Readiness Probe__ only runs as long as the pod is not ready
+
+__Liveness Probe__ runs the whole time and kills pod, if it doesn´t respond
+
+You can also do a filesystem command as a liveness probe or a tcp-request
