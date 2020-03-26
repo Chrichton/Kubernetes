@@ -464,8 +464,7 @@ kubectl get all -n kube-system
 
 ### Improving the capacity of a service by creating more instances
 
-## Vertical Scaling
-
+### Vertical Scaling
 ### Improving the capacity of a service by making instance more powerfull
 
 __HPA__ = horizontal autoscaler
@@ -484,3 +483,13 @@ kubectl describe hpa api-gateway
 
 ### force terminating pod
 kubectl delete pods <podname>  --grace-period=0 --force
+
+## Readines and Liveness Probes
+
+A pod that just has started and therefore has the status __running__ might still not be ready for service (at example Springboot takes about 30-60 seconds to start inside it´s container and be ready to receive requests)
+
+readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            
